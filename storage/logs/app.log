@@ -1,0 +1,8 @@
+2020/12/16 01:20:14 {"callers":null,"level":"info","message":"qyu: go-programming-tour-book/blog-service","time":1608052814213937000}
+2020/12/16 01:21:22 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 21 main.init.0"],"level":"info","message":"qyu: go-programming-tour-book/blog-service","time":1608052882820711000}
+2020/12/16 09:48:16 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 21 main.init.0"],"level":"info","message":"qyu: go-programming-tour-book/blog-service","time":1608083296832825000}
+2020/12/16 09:51:10 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 21 main.init.0"],"level":"info","message":"qyu: go-programming-tour-book/blog-service","time":1608083470898257000}
+2020/12/16 10:23:49 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 21 main.init.0"],"level":"info","message":"qyu: go-programming-tour-book/blog-service","time":1608085429268105000}
+2020/12/16 10:29:00 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 21 main.init.0"],"level":"info","message":"qyu: go-programming-tour-book/blog-service","time":1608085740712054000}
+2020/12/16 10:30:14 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 21 main.init.0"],"level":"info","message":"qyu: go-programming-tour-book/blog-service","time":1608085814622248000}
+2020/12/16 10:37:58 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 21 main.init.0"],"level":"info","message":"qyu: go-programming-tour-book/blog-service","time":1608086278994841000}
