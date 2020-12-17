@@ -6,16 +6,16 @@ import (
 	"github.com/go-programming-tour-book/blog-service/pkg/setting"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
+	"time"
 )
 
 type Model struct {
-	ID         uint32 `gorm:"primary_key" json:"id"`
-	CreatedBy  string `json:"created_by"`
-	ModifiedBy string `json:"modified_by"`
-	CreatedOn  uint32 `json:"created_on"`
-	ModifiedOn uint32 `json:"modified_on"`
-	DeletedOn  uint32 `json:"deleted_on"`
-	IsDel      uint8  `json:"is_del"`
+	ID         uint           `gorm:"primarykey" json:"id"`
+	CreatedAt  time.Time      `gorm:"created_at" json:"created_at"`
+	UpdatedAt  time.Time      `gorm:"updated_at" json:"updated_at"`
+	DeletedAt  gorm.DeletedAt `gorm:"index" json:"deleted_at"`
+	CreatedBy  string         `gorm:"created_by" json:"created_by"`
+	ModifiedBy string         `gorm:"modified_by" json:"modified_by"`
 }
 
 func NewDBEngine(databaseSetting *setting.DatabaseSettingS) (*gorm.DB, error) {
@@ -32,11 +32,14 @@ func NewDBEngine(databaseSetting *setting.DatabaseSettingS) (*gorm.DB, error) {
 			databaseSetting.DBName,
 			databaseSetting.Charset,
 			databaseSetting.ParseTime)
+
 		db, err = gorm.Open(mysql.New(mysql.Config{
 			DSN: dsn,
 			//DontSupportRenameColumn: true, // 用 `change` 重命名列，MySQL 8 之前的数据库和 MariaDB 不支持重命名列
 			//SkipInitializeWithVersion: false, // 根据当前 MySQL 版本自动配置
-		}), &gorm.Config{})
+		}), &gorm.Config{
+			DisableForeignKeyConstraintWhenMigrating: true,
+		})
 
 		if err != nil {
 			return nil, err
@@ -59,3 +62,19 @@ func NewDBEngine(databaseSetting *setting.DatabaseSettingS) (*gorm.DB, error) {
 
 	return db, nil
 }
+
+// 新版本回调
+//func updateTimeStampForCreateCallback(db *gorm.DB) {
+//	nowTime := time.Now().Unix()
+//	if createTimeField := db.Statement.Schema.LookUpField("CreatedOn"); createTimeField != nil {
+//		db.Statement.SetColumn("CreatedOn", nowTime)
+//	}
+//
+//	if createTimeField := db.Statement.Schema.LookUpField("CreatedOn"); createTimeField != nil {
+//		db.Statement.SetColumn("CreatedOn", nowTime)
+//	}
+//}
+//
+//func updateTimeStampForUpdateCallback(db *gorm.DB) {
+//
+//}

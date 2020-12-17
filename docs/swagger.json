@@ -275,32 +275,29 @@
         "model.Tag": {
             "type": "object",
             "properties": {
+                "created_at": {
+                    "type": "string"
+                },
                 "created_by": {
                     "type": "string"
                 },
-                "created_on": {
-                    "type": "integer"
-                },
-                "deleted_on": {
-                    "type": "integer"
+                "deleted_at": {
+                    "type": "string"
                 },
                 "id": {
                     "type": "integer"
                 },
-                "is_del": {
-                    "type": "integer"
-                },
                 "modified_by": {
                     "type": "string"
-                },
-                "modified_on": {
-                    "type": "integer"
                 },
                 "name": {
                     "type": "string"
                 },
                 "state": {
                     "type": "integer"
+                },
+                "updated_at": {
+                    "type": "string"
                 }
             }
         },

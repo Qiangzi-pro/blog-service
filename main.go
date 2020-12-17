@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/gin-gonic/gin/binding"
 	"github.com/go-programming-tour-book/blog-service/global"
 	"github.com/go-programming-tour-book/blog-service/internal/model"
 	"github.com/go-programming-tour-book/blog-service/internal/routers"
@@ -45,7 +46,7 @@ func main() {
 
 	global.Logger.Infof("%s: go-programming-tour-book/%s", "qyu", "blog-service")
 
-	s.ListenAndServe()
+	_ = s.ListenAndServe()
 
 }
 
@@ -91,5 +92,11 @@ func setupDBEngine() error {
 		return err
 	}
 
+	return nil
+}
+
+func setupValidator() error {
+	// 自定义validator设置
+	binding.Validator = global.Validator
 	return nil
 }

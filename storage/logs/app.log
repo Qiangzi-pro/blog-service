@@ -8,3 +8,21 @@
 2020/12/16 10:37:58 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 21 main.init.0"],"level":"info","message":"qyu: go-programming-tour-book/blog-service","time":1608086278994841000}
 2020/12/17 09:42:09 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 21 main.init.0"],"level":"info","message":"qyu: go-programming-tour-book/blog-service","time":1608169329274202000}
 2020/12/17 09:59:01 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 21 main.init.0"],"level":"info","message":"qyu: go-programming-tour-book/blog-service","time":1608170341131007000}
+2020/12/17 22:40:53 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 21 main.init.0"],"level":"info","message":"qyu: go-programming-tour-book/blog-service","time":1608216053872888000}
+2020/12/17 23:06:59 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 21 main.init.0"],"level":"info","message":"qyu: go-programming-tour-book/blog-service","time":1608217619096638000}
+2020/12/17 23:07:57 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 21 main.init.0"],"level":"error","message":"app.BindAndValid errs: State必须是[0 1]中的一个","time":1608217677679055000}
+2020/12/17 23:08:24 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 21 main.init.0"],"level":"error","message":"app.BindAndValid errs: State必须是[0 1]中的一个","time":1608217704934400000}
+2020/12/17 23:12:22 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 21 main.init.0"],"level":"error","message":"app.BindAndValid errs: State必须是[0 1]中的一个","time":1608217942346878000}
+2020/12/17 23:13:38 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 21 main.init.0"],"level":"info","message":"qyu: go-programming-tour-book/blog-service","time":1608218018444872000}
+2020/12/17 23:14:14 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 21 main.init.0"],"level":"error","message":"app.BindAndValid errs: ","time":1608218054463061000}
+2020/12/17 23:15:03 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 21 main.init.0"],"level":"error","message":"app.BindAndValid errs: ","time":1608218103476066000}
+2020/12/17 23:15:37 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 21 main.init.0"],"level":"error","message":"app.BindAndValid errs: ","time":1608218137641602000}
+2020/12/17 23:19:29 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 21 main.init.0"],"level":"info","message":"qyu: go-programming-tour-book/blog-service","time":1608218369037037000}
+2020/12/17 23:19:40 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 21 main.init.0"],"level":"error","message":"app.BindAndValid errs: State必须是[0 1]中的一个","time":1608218380251737000}
+2020/12/17 23:28:16 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 22 main.init.0"],"level":"info","message":"qyu: go-programming-tour-book/blog-service","time":1608218896260189000}
+2020/12/17 23:28:57 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 22 main.init.0"],"level":"error","message":"app.BindAndValid errs: State必须是[0 1]中的一个","time":1608218937304446000}
+2020/12/18 00:37:55 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 22 main.init.0"],"level":"info","message":"qyu: go-programming-tour-book/blog-service","time":1608223075801065000}
+2020/12/18 00:40:15 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 22 main.init.0"],"level":"info","message":"qyu: go-programming-tour-book/blog-service","time":1608223215499370000}
+2020/12/18 00:58:34 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 22 main.init.0"],"level":"info","message":"qyu: go-programming-tour-book/blog-service","time":1608224314798930000}
+2020/12/18 00:58:44 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 22 main.init.0"],"level":"info","message":"qyu: go-programming-tour-book/blog-service","time":1608224324204870000}
+2020/12/18 00:58:55 {"callers":["/Users/yuqiang/go-programming-tour-book/blog-service/main.go: 22 main.init.0"],"level":"error","message":"app.BindAndValid errs: State必须是[0 1]中的一个","time":1608224335660978000}
