@@ -18,12 +18,12 @@ func (s StrTo) MustInt() int {
 	return v
 }
 
-func (s StrTo) UInt32() (uint32, error) {
+func (s StrTo) UInt() (uint, error) {
 	v, err := strconv.Atoi(s.String())
-	return uint32(v), err
+	return uint(v), err
 }
 
-func (s StrTo) MustUInt32() uint32 {
-	v, _ := s.UInt32()
+func (s StrTo) MustUInt() uint {
+	v, _ := s.UInt()
 	return v
 }
