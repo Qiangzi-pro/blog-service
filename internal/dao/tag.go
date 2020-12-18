@@ -47,3 +47,13 @@ func (d *Dao) DeleteTag(id uint) error {
 	tag := model.Tag{Model: &model.Model{ID: id}}
 	return tag.Delete(d.engine)
 }
+
+func (d *Dao) GetTag(tagID uint, state uint8) (model.Tag, error) {
+	tag := model.Tag{
+		Model: &model.Model{
+			ID: tagID,
+		},
+		State: state,
+	}
+	return tag.Get(d.engine)
+}

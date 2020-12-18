@@ -2,11 +2,16 @@ package model
 
 import (
 	"fmt"
+	"time"
+
 	"github.com/go-programming-tour-book/blog-service/global"
 	"github.com/go-programming-tour-book/blog-service/pkg/setting"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
-	"time"
+)
+
+const (
+	StateOpen = 1
 )
 
 type Model struct {

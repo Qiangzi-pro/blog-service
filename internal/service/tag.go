@@ -1,6 +1,7 @@
 package service
 
 import (
+	"github.com/go-playground/validator/v10"
 	"github.com/go-programming-tour-book/blog-service/internal/model"
 	"github.com/go-programming-tour-book/blog-service/pkg/app"
 )
@@ -50,4 +51,8 @@ func (svc *Service) UpdateTag(param *UpdateTagRequest) error {
 
 func (svc *Service) DeleteTag(param *DeleteTagRequest) error {
 	return svc.dao.DeleteTag(param.ID)
+}
+
+func tagStructLevelValidation(v *validator.Validate, structLevel validator.StructLevel) {
+	//structLevel.ReportError()
 }

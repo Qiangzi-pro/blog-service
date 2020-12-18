@@ -59,6 +59,15 @@ func (t Tag) Delete(db *gorm.DB) error {
 	return db.Where("id = ?", t.Model.ID).Delete(&t).Error
 }
 
+func (t Tag) Get(db *gorm.DB) (Tag, error) {
+	var tag Tag
+	err := db.Where("id = ?", t.ID).First(&tag).Error
+	if err != nil {
+		return tag, err
+	}
+	return tag, nil
+}
+
 type TagSwagger struct {
 	List  []*Tag
 	Pager *app.Pager
