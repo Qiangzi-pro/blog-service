@@ -1,6 +1,8 @@
 package routers
 
 import (
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 	_ "github.com/go-programming-tour-book/blog-service/docs"
 	"github.com/go-programming-tour-book/blog-service/global"
@@ -9,7 +11,6 @@ import (
 	"github.com/go-programming-tour-book/blog-service/internal/routers/upload"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
-	"net/http"
 )
 
 func NewRouter() *gin.Engine {
