@@ -38,7 +38,7 @@ func (a Article) Get(db *gorm.DB) (Article, error) {
 	var article Article
 	db = db.Where("id = ? AND state = ?", a.ID, a.State)
 	err := db.First(&article).Error
-	if err != nil && err != gorm.ErrRecordNotFound {
+	if err != nil {
 		return article, err
 	}
 
@@ -72,7 +72,6 @@ func (a Article) ListByTagID(db *gorm.DB, tagID uint, pageOffset, pageSize int) 
 	if pageOffset >= 0 && pageSize > 0 {
 		db = db.Offset(pageOffset).Limit(pageSize)
 	}
-
 	rows, err := db.Select(fields).Table(ArticleTag{}.TableName()+" AS at").
 		Joins("LEFT JOIN `"+Tag{}.TableName()+"` AS t ON at.tag_id = t.id").
 		Joins("LEFT JOIN `"+Article{}.TableName()+"` AS ar ON at.article_id = ar.id").

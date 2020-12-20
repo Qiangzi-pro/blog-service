@@ -14,13 +14,14 @@ const (
 	StateOpen = 1
 )
 
+// todo 时间相关字段，使用时间戳！
 type Model struct {
-	ID         uint           `gorm:"primarykey" json:"id"`
-	CreatedAt  time.Time      `gorm:"created_at" json:"created_at"`
-	UpdatedAt  time.Time      `gorm:"updated_at" json:"updated_at"`
-	DeletedAt  gorm.DeletedAt `gorm:"index" json:"deleted_at"`
-	CreatedBy  string         `gorm:"created_by" json:"created_by"`
-	ModifiedBy string         `gorm:"modified_by" json:"modified_by"`
+	ID         uint           `gorm:"primarykey" json:"id,omitempty"`
+	CreatedAt  time.Time      `gorm:"created_at" json:"created_at,omitempty"`
+	UpdatedAt  time.Time      `gorm:"updated_at" json:"updated_at,omitempty"`
+	DeletedAt  gorm.DeletedAt `gorm:"index" json:"deleted_at,omitempty"`
+	CreatedBy  string         `gorm:"created_by" json:"created_by,omitempty"`
+	ModifiedBy string         `gorm:"modified_by" json:"modified_by,omitempty"`
 }
 
 func NewDBEngine(databaseSetting *setting.DatabaseSettingS) (*gorm.DB, error) {
@@ -54,7 +55,7 @@ func NewDBEngine(databaseSetting *setting.DatabaseSettingS) (*gorm.DB, error) {
 	}
 
 	if global.ServeSetting.RunMode == "debug" {
-		//db.Logger.LogMode()
+		db = db.Debug()
 	}
 	sqlDB, err := db.DB()
 	if err != nil {

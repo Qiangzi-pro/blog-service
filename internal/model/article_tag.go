@@ -67,6 +67,7 @@ func (at ArticleTag) Delete(db *gorm.DB) error {
 }
 
 func (at ArticleTag) DeleteOne(db *gorm.DB) error {
+	// 超时时间！
 	if err := db.Where("article_id = ?", at.ID).Delete(&at).Limit(1).Error; err != nil {
 		return err
 	}

@@ -12,8 +12,8 @@ type ArticleRequest struct {
 }
 
 type ArticleListRequest struct {
-	TagID uint  `json:"tag_id"`
-	State uint8 `json:"state"`
+	TagID uint  `form:"tag_id"`
+	State uint8 `form:"state,default=1"`
 }
 
 type Article struct {
@@ -27,28 +27,28 @@ type Article struct {
 }
 
 type CreateArticleRequest struct {
-	Title        string `json:"title"`
-	Desc         string `json:"desc"`
-	Content      string `json:"content"`
-	CoverImagUrl string `json:"cover_imag_url"`
-	State        uint8  `json:"state"`
-	CreatedBy    string `json:"created_by"`
-	TagID        uint   `json:"tag_id"`
+	Title        string `form:"title"`
+	Desc         string `form:"desc"`
+	Content      string `form:"content"`
+	CoverImagUrl string `form:"cover_imag_url"`
+	State        uint8  `form:"state"`
+	CreatedBy    string `form:"created_by"`
+	TagID        uint   `form:"tag_id"`
 }
 
 type UpdateArticleRequest struct {
-	ID           uint   `json:"id"`
-	Title        string `json:"title"`
-	Desc         string `json:"desc"`
-	Content      string `json:"content"`
-	CoverImagUrl string `json:"cover_imag_url"`
-	State        uint8  `json:"state"`
-	ModifiedBy   string `json:"modified_by"`
-	TagID        uint   `json:"tag_id"`
+	ID           uint   `form:"id"`
+	Title        string `form:"title"`
+	Desc         string `form:"desc"`
+	Content      string `form:"content"`
+	CoverImagUrl string `form:"cover_imag_url"`
+	State        uint8  `form:"state"`
+	ModifiedBy   string `form:"modified_by"`
+	TagID        uint   `form:"tag_id"`
 }
 
 type DeleteArticleRequest struct {
-	ID uint `json:"id"`
+	ID uint `form:"id"`
 }
 
 func (svc *Service) GetArticle(param *ArticleRequest) (*Article, error) {

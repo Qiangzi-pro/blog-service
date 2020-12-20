@@ -53,7 +53,7 @@ func (t Article) List(c *gin.Context) {
 	articles, totalRows, err := svc.GetArticleList(&param, &pager)
 	if err != nil {
 		global.Logger.Errorf("svc.GetArticleList err: %v", err)
-		response.ToErrorResponse(errcode.ErrorGetArticlesFail)
+		response.ToErrorResponse(errcode.ErrorGetTagListFail)
 		return
 	}
 
