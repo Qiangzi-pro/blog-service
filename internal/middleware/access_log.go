@@ -24,8 +24,10 @@ func (w AccessLogWriter) Write(p []byte) (int, error) {
 
 func AccessLog() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		bodyWriter := &AccessLogWriter{body: bytes.NewBufferString(""),
-			ResponseWriter: c.Writer}
+		bodyWriter := &AccessLogWriter{
+			body:           bytes.NewBufferString(""),
+			ResponseWriter: c.Writer,
+		}
 		c.Writer = bodyWriter
 		beginTime := time.Now().Unix()
 		c.Next()
