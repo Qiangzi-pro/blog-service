@@ -1,12 +1,14 @@
 package main
 
 import (
+	"context"
 	"github.com/gin-gonic/gin/binding"
 	"github.com/go-programming-tour-book/blog-service/global"
 	"github.com/go-programming-tour-book/blog-service/internal/model"
 	"github.com/go-programming-tour-book/blog-service/internal/routers"
 	"github.com/go-programming-tour-book/blog-service/pkg/logger"
 	"github.com/go-programming-tour-book/blog-service/pkg/setting"
+	"github.com/go-programming-tour-book/blog-service/pkg/tracer"
 	"gopkg.in/natefinch/lumberjack.v2"
 	"log"
 	"net/http"
@@ -14,7 +16,10 @@ import (
 )
 
 func init() {
-	err := setupSetting()
+	var (
+		err error
+	)
+	err = setupSetting()
 	if err != nil {
 		log.Fatalf("init setupSetting err: %v", err)
 	}
@@ -27,6 +32,11 @@ func init() {
 	err = setupDBEngine()
 	if err != nil {
 		log.Fatalf("init setupDBEngine err: %v", err)
+	}
+
+	err = setupTracer()
+	if err != nil {
+		log.Fatalf("init.setupTracer err: %v", err)
 	}
 }
 
@@ -44,7 +54,7 @@ func main() {
 		MaxHeaderBytes: 1 << 20,
 	}
 
-	global.Logger.Infof("%s: go-programming-tour-book/%s", "qyu", "blog-service")
+	global.Logger.Infof(context.Background(), "%s: go-programming-tour-book/%s", "qyu", "blog-service")
 
 	_ = s.ListenAndServe()
 
@@ -97,5 +107,17 @@ func setupDBEngine() error {
 func setupValidator() error {
 	// 自定义validator设置
 	binding.Validator = global.Validator
+	return nil
+}
+
+func setupTracer() error {
+	jaegerTracer, _, err := tracer.NewJaegerTracer(
+		"blog-service",
+		"127.0.0.1:6831",
+	)
+	if err != nil {
+		return err
+	}
+	global.Tracer = jaegerTracer
 	return nil
 }
