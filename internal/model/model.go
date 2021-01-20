@@ -2,6 +2,7 @@ package model
 
 import (
 	"fmt"
+	"github.com/go-programming-tour-book/blog-service/pkg/tracer"
 	"time"
 
 	"github.com/go-programming-tour-book/blog-service/global"
@@ -66,6 +67,7 @@ func NewDBEngine(databaseSetting *setting.DatabaseSettingS) (*gorm.DB, error) {
 	sqlDB.SetMaxIdleConns(databaseSetting.MaxIdleConns)
 	sqlDB.SetMaxOpenConns(databaseSetting.MaxOpenConns)
 
+	_ = db.Use(&tracer.OpenTracingPlugin{})
 	return db, nil
 }
 
