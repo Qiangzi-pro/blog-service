@@ -1,5 +1,5 @@
 Server:
-  RunMode: debug
+  RunMode: pro
   HttpPort: 8000
   ReadTimeout: 60s
   WriteTimeout: 60s
